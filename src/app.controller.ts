@@ -5,8 +5,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
+  @Get('/sun-altitude')
   getHello(): string {
-    return this.appService.getHello();
+    return this.appService.getSunAltitude();
   }
 }

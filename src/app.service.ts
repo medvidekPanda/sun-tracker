@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { getPosition, getTimes } from 'suncalc';
-import { DateTime } from 'luxon';
 
 @Injectable()
 export class AppService {
   getSunAltitude(): any {
-    const date = DateTime.now().toJSDate();
+    const date = new Date();
     const latitude = 49.58;
     const longitude = 15.84;
     const height = 560;

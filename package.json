@@ -1,13 +1,13 @@
 {
   "name": "sun-tracker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
-    "build:api": "npx nest build && cp ./package.json ./dist && docker build --platform linux/arm/v8 -t medvidekpanda/sun-tracker-arm:0.0.2 -f ./Dockerfile .",
+    "build:api": "cp ./package.json ./dist && docker build --platform linux/arm/v8 -t medvidekpanda/sun-tracker-arm:0.0.6 -f ./Dockerfile .",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",

@@ -6,7 +6,17 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('/sun-altitude')
-  getHello(): string {
+  sunAltitude(): string {
     return this.appService.getSunAltitude();
+  }
+
+  @Get('/sunrise')
+  getSunrise(): { hour: number; minute: number } {
+    return this.appService.getSunrise();
+  }
+
+  @Get('/sunset')
+  getSunset(): { hour: number; minute: number } {
+    return this.appService.getSunset();
   }
 }

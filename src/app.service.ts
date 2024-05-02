@@ -20,4 +20,32 @@ export class AppService {
       (180 / Math.PI)
     );
   }
+
+  getSunrise(): { hour: number; minute: number } {
+    const date = new Date();
+    const latitude = 49.58;
+    const longitude = 15.84;
+    const height = 560;
+
+    const { sunrise } = getTimes(date, latitude, longitude, height);
+
+    return {
+      hour: sunrise.getHours(),
+      minute: sunrise.getMinutes(),
+    };
+  }
+
+  getSunset(): { hour: number; minute: number } {
+    const date = new Date();
+    const latitude = 49.58;
+    const longitude = 15.84;
+    const height = 560;
+
+    const { sunset } = getTimes(date, latitude, longitude, height);
+
+    return {
+      hour: sunset.getHours(),
+      minute: sunset.getMinutes(),
+    };
+  }
 }

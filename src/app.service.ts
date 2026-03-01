@@ -21,31 +21,47 @@ export class AppService {
     );
   }
 
-  getSunrise(): { hour: number; minute: number } {
-    const date = new Date();
-    const latitude = 49.58;
-    const longitude = 15.84;
-    const height = 560;
-
-    const { sunrise } = getTimes(date, latitude, longitude, height);
-
+  private formatTimeResponse(date: Date): { dateTime: string; hour: number; minute: number } {
     return {
-      hour: sunrise.getHours(),
-      minute: sunrise.getMinutes(),
+      dateTime: date.toISOString(),
+      hour: date.getHours(),
+      minute: date.getMinutes(),
     };
   }
 
-  getSunset(): { hour: number; minute: number } {
+  getSunrise(): { dateTime: string; hour: number; minute: number } {
     const date = new Date();
     const latitude = 49.58;
     const longitude = 15.84;
     const height = 560;
+    const { sunrise } = getTimes(date, latitude, longitude, height);
+    return this.formatTimeResponse(sunrise);
+  }
 
+  getSunset(): { dateTime: string; hour: number; minute: number } {
+    const date = new Date();
+    const latitude = 49.58;
+    const longitude = 15.84;
+    const height = 560;
     const { sunset } = getTimes(date, latitude, longitude, height);
+    return this.formatTimeResponse(sunset);
+  }
 
-    return {
-      hour: sunset.getHours(),
-      minute: sunset.getMinutes(),
-    };
+  getDawn(): { dateTime: string; hour: number; minute: number } {
+    const date = new Date();
+    const latitude = 49.58;
+    const longitude = 15.84;
+    const height = 560;
+    const { dawn } = getTimes(date, latitude, longitude, height);
+    return this.formatTimeResponse(dawn);
+  }
+
+  getDusk(): { dateTime: string; hour: number; minute: number } {
+    const date = new Date();
+    const latitude = 49.58;
+    const longitude = 15.84;
+    const height = 560;
+    const { dusk } = getTimes(date, latitude, longitude, height);
+    return this.formatTimeResponse(dusk);
   }
 }

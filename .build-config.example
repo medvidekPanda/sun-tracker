@@ -1,0 +1,10 @@
+# Docker registry for build-and-push.sh
+# Copy this file to .build-config and set your registry:
+#   cp .build-config.example .build-config
+#
+# Examples:
+#   export DOCKER_REGISTRY="docker.io/your-username"
+#   export DOCKER_REGISTRY="ghcr.io/your-org"
+#   export DOCKER_REGISTRY="my-registry.com:5000"
+
+export DOCKER_REGISTRY=""

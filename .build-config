@@ -1,0 +1,8 @@
+# Docker Build Configuration
+# Copy this file to .build-config and customize for your environment
+# The .build-config file is ignored by git and won't be committed
+
+# Docker registry address
+# Example: registry.example.com:5000
+DOCKER_REGISTRY=10.40.196.82:5000
+

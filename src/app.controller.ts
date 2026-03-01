@@ -11,12 +11,22 @@ export class AppController {
   }
 
   @Get('/sunrise')
-  getSunrise(): { hour: number; minute: number } {
+  getSunrise(): { dateTime: string; hour: number; minute: number } {
     return this.appService.getSunrise();
   }
 
   @Get('/sunset')
-  getSunset(): { hour: number; minute: number } {
+  getSunset(): { dateTime: string; hour: number; minute: number } {
     return this.appService.getSunset();
+  }
+
+  @Get('/dawn')
+  getDawn(): { dateTime: string; hour: number; minute: number } {
+    return this.appService.getDawn();
+  }
+
+  @Get('/dusk')
+  getDusk(): { dateTime: string; hour: number; minute: number } {
+    return this.appService.getDusk();
   }
 }
